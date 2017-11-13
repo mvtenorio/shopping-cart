@@ -1,0 +1,106 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "Camisa Adidas Flamengo masculina",
+            "description": "Modelo 2017 s/n",
+            "availableSizes": [
+                "S",
+                "G",
+                "GG",
+                "GGG"
+            ],
+            "style": "Vermelha e preta",
+            "price": 229.9,
+            "installments": 9,
+            "currencyId": "BRL",
+            "currencyFormat": "R$",
+            "isFreeShipping": true
+        },
+        {
+            "id": 2,
+            "title": "Camisa Adidas Flamengo feminina",
+            "description": "Modelo 2017 s/n",
+            "availableSizes": [
+                "XS",
+                "S",
+                "G",
+                "GG"
+            ],
+            "style": "Vermelha e preta",
+            "price": 199.9,
+            "installments": 9,
+            "currencyId": "BRL",
+            "currencyFormat": "R$",
+            "isFreeShipping": true
+        },
+        {
+            "id": 3,
+            "title": "Camisa 3",
+            "description": "Modelo 2017 s/n",
+            "availableSizes": [
+                "S",
+                "G",
+                "GG",
+                "GGG"
+            ],
+            "style": "Vermelha e preta",
+            "price": 229.9,
+            "installments": 9,
+            "currencyId": "BRL",
+            "currencyFormat": "R$",
+            "isFreeShipping": true
+        },
+        {
+            "id": 4,
+            "title": "Camisa Infantil",
+            "description": "Modelo 3 2017 s/n",
+            "availableSizes": [
+                "S",
+                "G",
+                "GG",
+                "GGG"
+            ],
+            "style": "Vermelha e preta",
+            "price": 229.9,
+            "installments": 9,
+            "currencyId": "BRL",
+            "currencyFormat": "R$",
+            "isFreeShipping": true
+        },
+        {
+            "id": 5,
+            "title": "Camisa treino",
+            "description": "Modelo 2017 s/n",
+            "availableSizes": [
+                "S",
+                "G",
+                "GG",
+                "GGG"
+            ],
+            "style": "Vermelha e preta",
+            "price": 229.9,
+            "installments": 9,
+            "currencyId": "BRL",
+            "currencyFormat": "R$",
+            "isFreeShipping": true
+        },
+        {
+            "id": 6,
+            "title": "Camisa 2",
+            "description": "Modelo 2017 s/n",
+            "availableSizes": [
+                "S",
+                "G",
+                "GG",
+                "GGG"
+            ],
+            "style": "Vermelha e preta",
+            "price": 229.9,
+            "installments": 9,
+            "currencyId": "BRL",
+            "currencyFormat": "R$",
+            "isFreeShipping": true
+        }
+    ]
+}
