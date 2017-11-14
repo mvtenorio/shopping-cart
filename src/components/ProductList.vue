@@ -1,5 +1,5 @@
 <template>
-<div class="catalogue">
+<div class="product-list">
     <product
       v-for="product in sharedState.products"
       :key="product.id"
@@ -14,7 +14,7 @@ import Product from '@/components/Product';
 import store from '@/store';
 
 export default {
-  name: 'catalogue',
+  name: 'product-list',
   components: {
     Product,
   },
@@ -27,12 +27,8 @@ export default {
 </script>
 
 <style scoped>
-.catalogue {
+.product-list {
   display: flex;
   flex-wrap: wrap;
-  /* align-content: space-between; */
 }
-/* .product {
-  flex: 0 0 auto;
-} */
 </style>

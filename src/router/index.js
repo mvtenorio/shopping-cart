@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Catalogue from '@/components/Catalogue';
+import ProductList from '@/components/ProductList';
 
 Vue.use(Router);
 
@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Catalogue',
-      component: Catalogue,
+      name: 'ProductList',
+      component: ProductList,
     },
   ],
 });
