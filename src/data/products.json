@@ -12,10 +12,11 @@
             ],
             "style": "Vermelha e preta",
             "price": 229.9,
-            "installments": 9,
+            "installments": 4,
             "currencyId": "BRL",
             "currencyFormat": "R$",
-            "isFreeShipping": true
+            "isFreeShipping": true,
+            "image": "1abc9c"
         },
         {
             "id": 2,
@@ -29,10 +30,11 @@
             ],
             "style": "Vermelha e preta",
             "price": 199.9,
-            "installments": 9,
+            "installments": 3,
             "currencyId": "BRL",
             "currencyFormat": "R$",
-            "isFreeShipping": true
+            "isFreeShipping": true,
+            "image": "2980b9"
         },
         {
             "id": 3,
@@ -46,10 +48,11 @@
             ],
             "style": "Vermelha e preta",
             "price": 229.9,
-            "installments": 9,
+            "installments": 3,
             "currencyId": "BRL",
             "currencyFormat": "R$",
-            "isFreeShipping": true
+            "isFreeShipping": true,
+            "image": "9b59b6"
         },
         {
             "id": 4,
@@ -63,10 +66,11 @@
             ],
             "style": "Vermelha e preta",
             "price": 229.9,
-            "installments": 9,
+            "installments": 3,
             "currencyId": "BRL",
             "currencyFormat": "R$",
-            "isFreeShipping": true
+            "isFreeShipping": true,
+            "image": "e74c3c"
         },
         {
             "id": 5,
@@ -80,10 +84,11 @@
             ],
             "style": "Vermelha e preta",
             "price": 229.9,
-            "installments": 9,
+            "installments": 3,
             "currencyId": "BRL",
             "currencyFormat": "R$",
-            "isFreeShipping": true
+            "isFreeShipping": true,
+            "image": "f1c40f"
         },
         {
             "id": 6,
@@ -97,10 +102,11 @@
             ],
             "style": "Vermelha e preta",
             "price": 229.9,
-            "installments": 9,
+            "installments": 3,
             "currencyId": "BRL",
             "currencyFormat": "R$",
-            "isFreeShipping": true
+            "isFreeShipping": true,
+            "image": "bdc3c7"
         }
     ]
 }

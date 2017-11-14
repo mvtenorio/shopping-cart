@@ -1,15 +1,18 @@
 <template>
   <div class="product">
     <figure class="product-image">
-      <img src="http://via.placeholder.com/220" alt="Product Image">
+      <img :src="imgSrc" alt="Product Image">
       <figcaption>{{ title }}</figcaption>
     </figure>
     <div>-</div>
     <p>
-      <small>R$</small>
-      <span>{{ price }}</span>
+      <small>{{ currencyFormat }}</small>
+      <span>{{ formattedPrice }}</span>
     </p>
-    <p>ou 4x R$ 25,00</p>
+    <p>
+      ou {{ installments }} x <small>{{ currencyFormat }}</small> {{
+        formattedInstallmentPrice }}
+    </p>
     <button @click="increment">Add to cart</button>
   </div>
 </template>
@@ -20,13 +23,28 @@ import store from '@/store';
 export default {
   name: 'product',
   props: [
+    'currencyFormat',
+    'image',
+    'installments',
     'price',
     'title',
   ],
-  data() {
-    return {
-      sharedState: store.state,
-    };
+  computed: {
+    formattedPrice() {
+      return this.price
+        .toFixed(2)
+        .replace('.', ',');
+    },
+
+    formattedInstallmentPrice() {
+      return (this.price / this.installments)
+        .toFixed(2)
+        .replace('.', ',');
+    },
+
+    imgSrc() {
+      return `http://via.placeholder.com/220/${this.image}`;
+    },
   },
   methods: {
     increment() {
