@@ -1,6 +1,7 @@
 <template>
   <div class="cart-indicator">
-    cart-indicator - count: {{ sharedState.count }}
+    <p>Quantidade: {{ quantity }}</p>
+    <p>Subtotal: {{ subtotal }}</p>
   </div>
 </template>
 
@@ -13,6 +14,27 @@ export default {
     return {
       sharedState: store.state,
     };
+  },
+
+  computed: {
+    quantity() {
+      return this.sharedState.productsAdded
+        .reduce((previous, current) => previous + current.quantity, 0);
+    },
+
+    subtotal() {
+      return this.sharedState.productsAdded
+        .reduce(
+          (previous, current) => {
+            const price = this.sharedState.products
+              .find(item => item.id === current.productId)
+              .price;
+            const totalPrice = price * current.quantity;
+            return previous + totalPrice;
+          },
+          0,
+        );
+    },
   },
 };
 </script>

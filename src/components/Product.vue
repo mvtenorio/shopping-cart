@@ -13,7 +13,7 @@
       ou {{ installments }} x <small>{{ currencyFormat }}</small> {{
         formattedInstallmentPrice }}
     </p>
-    <button @click="increment">Add to cart</button>
+    <button @click="addToCart">Add to cart</button>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
   name: 'product',
   props: [
     'currencyFormat',
+    'id',
     'image',
     'installments',
     'price',
@@ -47,8 +48,8 @@ export default {
     },
   },
   methods: {
-    increment() {
-      store.incrementCountAction();
+    addToCart() {
+      store.addToCartAction(this.id);
     },
   },
 };
