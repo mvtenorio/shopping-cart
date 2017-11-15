@@ -1,21 +1,22 @@
 <template>
   <div class="cart-indicator">
     <p>Quantidade: {{ quantity }}</p>
-    <p>Subtotal: {{ subtotal }}</p>
+    <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
   </div>
 </template>
 
 <script>
 import store from '@/store';
+import priceMixin from '@/mixins/price';
 
 export default {
   name: 'cart-indicator',
+  mixins: [priceMixin],
   data() {
     return {
       sharedState: store.state,
     };
   },
-
   computed: {
     quantity() {
       return this.sharedState.productsAdded

@@ -6,12 +6,12 @@
     </figure>
     <div>-</div>
     <p>
-      <small>{{ currencyFormat }}</small>
-      <span>{{ formattedPrice }}</span>
+      <small>R$</small>
+      <span>{{ formatPrice(price) }}</span>
     </p>
     <p>
-      ou {{ installments }} x <small>{{ currencyFormat }}</small> {{
-        formattedInstallmentPrice }}
+      ou {{ installments }} x <small>R$</small> {{
+        formatPrice(installmentPrice) }}
     </p>
     <button @click="addToCart">Add to cart</button>
   </div>
@@ -19,9 +19,11 @@
 
 <script>
 import store from '@/store';
+import priceMixin from '@/mixins/price';
 
 export default {
   name: 'product',
+  mixins: [priceMixin],
   props: [
     'currencyFormat',
     'id',
@@ -31,16 +33,8 @@ export default {
     'title',
   ],
   computed: {
-    formattedPrice() {
-      return this.price
-        .toFixed(2)
-        .replace('.', ',');
-    },
-
-    formattedInstallmentPrice() {
-      return (this.price / this.installments)
-        .toFixed(2)
-        .replace('.', ',');
+    installmentPrice() {
+      return this.price / this.installments;
     },
 
     imgSrc() {

@@ -6,8 +6,6 @@
             "description": "Model A",
             "price": 229.9,
             "installments": 4,
-            "currencyId": "BRL",
-            "currencyFormat": "R$",
             "isFreeShipping": true,
             "image": "1abc9c"
         },
@@ -17,8 +15,6 @@
             "description": "Model B",
             "price": 199.9,
             "installments": 3,
-            "currencyId": "BRL",
-            "currencyFormat": "R$",
             "isFreeShipping": true,
             "image": "2980b9"
         },
@@ -28,8 +24,6 @@
             "description": "Model C",
             "price": 29.9,
             "installments": 2,
-            "currencyId": "BRL",
-            "currencyFormat": "R$",
             "isFreeShipping": true,
             "image": "9b59b6"
         },
@@ -39,8 +33,6 @@
             "description": "Model D",
             "price": 429.9,
             "installments": 4,
-            "currencyId": "BRL",
-            "currencyFormat": "R$",
             "isFreeShipping": true,
             "image": "e74c3c"
         },
@@ -50,8 +42,6 @@
             "description": "Model E",
             "price": 369.9,
             "installments": 3,
-            "currencyId": "BRL",
-            "currencyFormat": "R$",
             "isFreeShipping": true,
             "image": "f1c40f"
         },
@@ -61,8 +51,6 @@
             "description": "Model F",
             "price": 929.9,
             "installments": 12,
-            "currencyId": "BRL",
-            "currencyFormat": "R$",
             "isFreeShipping": true,
             "image": "bdc3c7"
         }
