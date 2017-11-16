@@ -13,6 +13,15 @@
       ou {{ installments }} x <small>R$</small> {{
         formatPrice(installmentPrice) }}
     </p>
+    <p>Quantidade:
+      <input
+        type="number"
+        class="quantity"
+        v-model="quantity"
+        min="1"
+        max="10"
+      >
+    </p>
     <button @click="addToCart">Add to cart</button>
   </div>
 </template>
@@ -32,6 +41,11 @@ export default {
     'price',
     'title',
   ],
+  data() {
+    return {
+      quantity: 1,
+    };
+  },
   computed: {
     installmentPrice() {
       return this.price / this.installments;
@@ -43,7 +57,10 @@ export default {
   },
   methods: {
     addToCart() {
-      store.addToCartAction(this.id);
+      const quantity = Number.parseInt(this.quantity, 10);
+      if (quantity) {
+        store.addToCartAction(this.id, quantity);
+      }
     },
   },
 };
@@ -57,5 +74,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.quantity {
+  width: 50px;
 }
 </style>

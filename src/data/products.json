@@ -2,8 +2,8 @@
     "products": [
         {
             "id": 1,
-            "title": "Product A",
-            "description": "Model A",
+            "title": "Produto A",
+            "description": "Modelo A",
             "price": 229.9,
             "installments": 4,
             "isFreeShipping": true,
@@ -11,8 +11,8 @@
         },
         {
             "id": 2,
-            "title": "Product B",
-            "description": "Model B",
+            "title": "Produto B",
+            "description": "Modelo B",
             "price": 199.9,
             "installments": 3,
             "isFreeShipping": true,
@@ -20,8 +20,8 @@
         },
         {
             "id": 3,
-            "title": "Product C",
-            "description": "Model C",
+            "title": "Produto C",
+            "description": "Modelo C",
             "price": 29.9,
             "installments": 2,
             "isFreeShipping": true,
@@ -29,8 +29,8 @@
         },
         {
             "id": 4,
-            "title": "Product D",
-            "description": "Model D",
+            "title": "Produto D",
+            "description": "Modelo D",
             "price": 429.9,
             "installments": 4,
             "isFreeShipping": true,
@@ -38,8 +38,8 @@
         },
         {
             "id": 5,
-            "title": "Product E",
-            "description": "Model E",
+            "title": "Produto E",
+            "description": "Modelo E",
             "price": 369.9,
             "installments": 3,
             "isFreeShipping": true,
@@ -47,8 +47,8 @@
         },
         {
             "id": 6,
-            "title": "Product F",
-            "description": "Model F",
+            "title": "Produto F",
+            "description": "Modelo F",
             "price": 929.9,
             "installments": 12,
             "isFreeShipping": true,
