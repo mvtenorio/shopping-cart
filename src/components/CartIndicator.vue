@@ -2,6 +2,7 @@
   <div class="cart-indicator">
     <p>Quantidade: {{ quantity }}</p>
     <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
+    <a href="#/cart">Comprar</a>
   </div>
 </template>
 
