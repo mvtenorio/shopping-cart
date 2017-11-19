@@ -1,7 +1,6 @@
 <template>
 <div>
-    <cart-indicator></cart-indicator>
-    <div class="flex flex-wrap bg-grey-lighter">
+    <div class="flex flex-wrap bg-white">
       <product
         v-for="product in sharedState.products"
         :key="product.id"
@@ -13,14 +12,12 @@
 </template>
 
 <script>
-import CartIndicator from '@/components/CartIndicator';
 import Product from '@/components/Product';
 import store from '@/store';
 
 export default {
   name: 'product-list',
   components: {
-    CartIndicator,
     Product,
   },
   data() {

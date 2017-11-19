@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <p>Quantidade: {{ quantity }}</p>
-    <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
-    <a href="#/cart">Comprar</a>
+  <div class="h-full">
+    <div class="w-48 h-full ml-auto text-white flex flex-col justify-center">
+      <p>Quantidade: {{ quantity }}</p>
+      <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
+      <a href="#/cart">Comprar</a>
+    </div>
   </div>
 </template>
 
