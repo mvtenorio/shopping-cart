@@ -1,5 +1,5 @@
 <template>
-  <div class="cart-indicator">
+  <div>
     <p>Quantidade: {{ quantity }}</p>
     <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
     <a href="#/cart">Comprar</a>
@@ -40,6 +40,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

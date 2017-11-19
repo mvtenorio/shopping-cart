@@ -1,7 +1,7 @@
 <template>
-<div class="product-list">
+<div>
     <cart-indicator></cart-indicator>
-    <div class="list">
+    <div class="flex flex-wrap bg-grey-lighter">
       <product
         v-for="product in sharedState.products"
         :key="product.id"
@@ -30,10 +30,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.list {
-  display: flex;
-  flex-wrap: wrap;
-}
-</style>

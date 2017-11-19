@@ -1,8 +1,8 @@
 <template>
-  <div class="product">
-    <figure class="product-image">
+  <div class="flex flex-col items-center p-4">
+    <figure>
       <img :src="imgSrc" alt="Product Image">
-      <figcaption>{{ title }}</figcaption>
+      <figcaption class="text-center">{{ title }}</figcaption>
     </figure>
     <div>-</div>
     <p>
@@ -16,13 +16,20 @@
     <p>Quantidade:
       <input
         type="number"
-        class="quantity"
+        class="w-12"
         v-model="quantity"
         min="1"
         max="10"
       >
     </p>
-    <button @click="addToCart">Add to cart</button>
+    <div class="my-2">
+      <button
+        class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded"
+        @click="addToCart"
+      >
+        Add to cart
+      </button>
+    </div>
   </div>
 </template>
 
@@ -65,18 +72,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.product {
-  width: 300px;
-  height: 480px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.quantity {
-  width: 50px;
-}
-</style>

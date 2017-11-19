@@ -1,5 +1,5 @@
 <template>
-  <div class="cart">
+  <div>
     <p>Meu carrinho</p>
     <ul>
       <li
@@ -33,6 +33,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-</style>

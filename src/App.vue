@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container mx-auto px-4">
     <main>
       <router-view></router-view>
     </main>
@@ -12,13 +12,6 @@ export default {
 };
 </script>
 
-<style>
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding-top: 20px;
-}
+<style lang="sass">
+@import './assets/css/styles.scss';
 </style>
