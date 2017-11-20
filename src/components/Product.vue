@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center p-4">
+  <div class="flex flex-col items-center p-4 leading-loose">
     <figure>
       <img :src="imgSrc" alt="Product Image">
       <figcaption class="text-center">{{ title }}</figcaption>
@@ -24,7 +24,7 @@
     </p>
     <div class="my-2">
       <button
-        class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded"
+        class="bg-indigo hover:bg-indigo-dark text-white font-bold py-2 px-4 rounded"
         @click="addToCart"
       >
         Add to cart

@@ -3,7 +3,7 @@
     <div class="w-48 h-full ml-auto text-white flex flex-col justify-center">
       <p>Quantidade: {{ quantity }}</p>
       <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
-      <a href="#/cart">Comprar</a>
+      <button @click="$emit('cartOpened')">Comprar</button>
     </div>
   </div>
 </template>
