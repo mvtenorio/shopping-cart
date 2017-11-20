@@ -1,6 +1,8 @@
-# y
+# Shopping Cart
 
-> A Vue.js project
+> Uma aplicação de carrinho de compras feito para fins de estudo.
+
+Foi utilizado o [template PWA do Vue.js ](https://github.com/vuejs-templates/pwa)
 
 ## Build Setup
 
