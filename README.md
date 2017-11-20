@@ -1,6 +1,6 @@
 # Shopping Cart
 
-> Uma aplicação de carrinho de compras feito para fins de estudo.
+> Uma aplicação de carrinho de compras feita para fins de estudo.
 
 Foi utilizado o [template PWA do Vue.js ](https://github.com/vuejs-templates/pwa)
 
