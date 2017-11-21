@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="bg-grey-lighter">
-    <header class="w-screen h-16 bg-indigo">
+    <header class="w-full h-16 bg-indigo">
       <cart-indicator @cartOpened="cartIsOpen = true"></cart-indicator>
     </header>
     <main class="container mx-auto px-4">
