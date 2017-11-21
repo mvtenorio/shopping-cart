@@ -4,14 +4,14 @@
       <p>Quantidade: {{ quantity }}</p>
       <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
     </div>
-    <div class="flex justify-center w-24 cursor-pointer"
+    <button class="w-24 text-white"
       @click="$emit('cartOpened')"
     >
       <img class="w-8"
         src="./../assets/img/shopping-cart.svg"
-        alt="Cart"
+        alt="Carrinho"
       >
-    </div>
+    </button>
   </div>
 </template>
 
