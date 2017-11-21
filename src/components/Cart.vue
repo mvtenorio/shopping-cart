@@ -6,9 +6,13 @@
       <h1 class="uppercase tracking-wide semibold inline-block">
         Meu carrinho
       </h1>
-      <button class="text-white text-xg absolute pin-r"
+      <button class="text-white absolute pin-r"
         @click="$emit('cartClosed')"
-      >Fechar
+      >
+        <img class="w-6"
+          src="./../assets/img/close.svg"
+          alt="Fechar"
+        >
       </button>
     </div>
     <ul class="list-reset" v-if="sharedState.productsAdded.length">
