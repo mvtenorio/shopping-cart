@@ -1,9 +1,16 @@
 <template>
-  <div class="h-full">
-    <div class="w-48 h-full ml-auto text-white flex flex-col justify-center">
+  <div class="h-full flex">
+    <div class="flex flex-col justify-center w-48 px-4 ml-auto text-white">
       <p>Quantidade: {{ quantity }}</p>
       <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
-      <button @click="$emit('cartOpened')">Comprar</button>
+    </div>
+    <div class="flex justify-center w-24 cursor-pointer"
+      @click="$emit('cartOpened')"
+    >
+      <img class="w-8"
+        src="./../assets/img/shopping-cart.svg"
+        alt="Cart"
+      >
     </div>
   </div>
 </template>
