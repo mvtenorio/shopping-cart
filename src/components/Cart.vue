@@ -17,10 +17,10 @@
     </div>
     <ul class="list-reset" v-if="sharedState.productsAdded.length">
       <li
-        v-for="item in sharedState.productsAdded"
-        :key="item.productId"
+        v-for="item in order"
+        :key="item.product.id"
       >
-        {{ getProductById(item.productId).title }} - {{ item.quantity }}
+        {{ item.product.title }} - {{ item.quantity }}
       </li>
     </ul>
     <p v-else>
@@ -36,19 +36,28 @@ import priceMixin from '@/mixins/price';
 export default {
   name: 'cart',
   mixins: [priceMixin],
-  props: [
-    'isOpen',
-  ],
+  props: ['isOpen'],
   data() {
     return {
       sharedState: store.state,
     };
   },
+  computed: {
+    order() {
+      return this.sharedState.productsAdded.map(item =>
+        this.createOrderItem(item),
+      );
+    },
+  },
   methods: {
+    createOrderItem(item) {
+      return {
+        quantity: item.quantity,
+        product: this.getProductById(item.productId),
+      };
+    },
     getProductById(id) {
-      return this.sharedState.products
-        .filter(item => item.id === id)
-        .shift();
+      return this.sharedState.products.find(item => item.id === id);
     },
   },
 };
