@@ -1,6 +1,6 @@
 <template>
   <div class="h-full flex">
-    <div class="flex flex-col justify-center w-48 px-4 ml-auto text-white">
+    <div class="flex flex-col justify-center px-4 ml-auto text-white">
       <p>Quantidade: {{ quantity }}</p>
       <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
     </div>
