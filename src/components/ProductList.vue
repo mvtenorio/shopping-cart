@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="flex flex-wrap bg-white">
+    <div class="flex flex-wrap justify-center sm:justify-start bg-white">
       <product
         v-for="product in sharedState.products"
         :key="product.id"

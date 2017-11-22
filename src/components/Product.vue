@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center p-4 leading-loose">
+  <div class="flex flex-col items-center md:w-1/4 p-4 leading-loose">
     <figure>
       <img :src="imgSrc" alt="Product Image">
       <figcaption class="text-center">{{ title }}</figcaption>
