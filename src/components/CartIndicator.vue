@@ -1,17 +1,23 @@
 <template>
-  <div class="h-full flex">
-    <div class="flex flex-col justify-center px-4 ml-auto text-white">
-      <p>Quantidade: {{ quantity }}</p>
+  <div class="h-full flex p-2 pr-6">
+    <div class="flex flex-col justify-center ml-auto text-white">
       <p>Subtotal: R$ {{ formatPrice(subtotal) }}</p>
     </div>
-    <button class="w-24 text-white"
-      @click="$emit('cartOpened')"
-    >
-      <img class="w-8"
-        src="./../assets/img/shopping-cart.svg"
-        alt="Carrinho"
+    <div class="relative h-full">
+      <button class="w-24 h-full text-white -mr-6"
+        @click="$emit('cartOpened')"
       >
-    </button>
+        <img class="w-12"
+          src="./../assets/img/shopping-cart.svg"
+          alt="Carrinho"
+        >
+        <span
+          class="inline-block min-w-6 bg-red absolute pin-r rounded-full font-sans leading-normal"
+        >
+          {{ quantity }}
+        </span>
+      </button>
+    </div>
   </div>
 </template>
 
