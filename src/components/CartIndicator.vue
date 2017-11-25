@@ -13,6 +13,7 @@
         >
         <span
           class="inline-block min-w-6 bg-red absolute pin-r rounded-full font-sans leading-normal"
+          v-if="quantity"
         >
           {{ quantity }}
         </span>
