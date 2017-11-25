@@ -48,7 +48,7 @@ describe('Cart.vue', function () {
     );
   });
 
-  it('displays a list of the ordered products', async function () {
+  it('displays a list of the products in the cart', async function () {
     vm.sharedState.productsAdded = [
       {
         productId: 1,
@@ -60,7 +60,7 @@ describe('Cart.vue', function () {
       },
     ];
     await Vue.nextTick();
-    const listItems = vm.$el.querySelectorAll('li');
+    const listItems = vm.$el.querySelectorAll('tbody tr');
     expect(listItems.length).to.equal(2);
   });
 
@@ -77,7 +77,7 @@ describe('Cart.vue', function () {
     ];
     await Vue.nextTick();
 
-    const firstItemImg = vm.$el.querySelector('ul img');
+    const firstItemImg = vm.$el.querySelector('tbody img');
     expect(firstItemImg.src).to.equal('http://via.placeholder.com/50/1abc9c');
   });
 });

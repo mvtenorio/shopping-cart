@@ -1,33 +1,65 @@
 <template>
-  <div class="fixed pin-r pin-y w-3/5 bg-grey-darkest text-white p-8"
-    v-if="isOpen"
-  >
-    <div class="relative mb-8">
-      <h1 class="uppercase tracking-wide semibold inline-block">
-        Meu carrinho
-      </h1>
-      <button class="text-white absolute pin-r"
-        @click="$emit('cartClosed')"
+<div class="fixed pin-r pin-y w-full md:w-3/5 bg-grey-darkest text-white p-8 flex flex-col"
+  v-if="isOpen"
+>
+  <div class="relative mb-8">
+    <h1 class="uppercase tracking-wide inline-block">
+      Meu carrinho
+    </h1>
+    <button class="text-white absolute pin-r"
+      @click="$emit('cartClosed')"
+    >
+      <img class="w-6"
+        src="./../assets/img/close.svg"
+        alt="Fechar"
       >
-        <img class="w-6"
-          src="./../assets/img/close.svg"
-          alt="Fechar"
-        >
-      </button>
-    </div>
-    <ul class="list-reset" v-if="sharedState.productsAdded.length">
-      <li
-        v-for="item in order"
-        :key="item.product.id"
-      >
-        <img :src="`http://via.placeholder.com/50/${item.product.image}`" alt="Thumbnail">
-        {{ item.product.title }} - {{ item.quantity }}
-      </li>
-    </ul>
-    <p v-else>
-      Seu carrinho está vazio.
-    </p>
+    </button>
   </div>
+  <div class="flex-1 overflow-y-scroll" v-if="sharedState.productsAdded.length">
+    <table class="w-full" cellspacing="0">
+      <thead>
+        <tr class="h-12 uppercase">
+          <th></th>
+          <th class="text-left">Produto</th>
+          <th class="text-right">Quantidade</th>
+          <th class="text-right">Preço</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="item in order"
+          :key="item.product.id"
+          class="h-24"
+        >
+          <td class="w-24">
+              <img :src="`http://via.placeholder.com/50/${item.product.image}`"
+                alt="Thumbnail"
+              >
+          </td>
+          <td>
+            {{ item.product.title }}
+          </td>
+          <td class="text-right">
+            {{ item.quantity }}
+          </td>
+          <td class="text-right">
+            R$ {{ formatPrice(item.product.price) }}
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr class="h-24">
+          <td></td>
+          <th colspan="2" class="text-right border-t uppercase">Subtotal</th>
+          <td class="text-right border-t">-</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <p v-else>
+    Seu carrinho está vazio.
+  </p>
+</div>
 </template>
 
 <script>
