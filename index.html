@@ -26,7 +26,7 @@
           if (file.match(/\.(js|css)$/)) { %>
     <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>"><% }}} %>
   </head>
-  <body>
+  <body class="font-sans">
     <noscript>
       This is your fallback content in case JavaScript fails to load.
     </noscript>
