@@ -1,5 +1,5 @@
 <template>
-<div id="app" class="bg-grey-lighter">
+<div id="app" class="bg-grey-lighter relative">
   <header class="w-full h-16 bg-indigo">
     <cart-indicator @cartOpened="cartIsOpen = true"></cart-indicator>
   </header>

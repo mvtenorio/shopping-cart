@@ -1,5 +1,5 @@
 <template>
-<div class="fixed pin-r pin-y w-full md:w-3/5 bg-grey-darkest text-white p-8 flex flex-col"
+<div class="absolute pin-r pin-y w-full md:w-3/5 bg-grey-darkest text-white p-8 flex flex-col"
   v-if="isOpen"
 >
   <div class="relative mb-8">
@@ -15,7 +15,7 @@
       >
     </button>
   </div>
-  <div class="flex-1 overflow-y-scroll" v-if="sharedState.productsAdded.length">
+  <div class="flex-1" v-if="sharedState.productsAdded.length">
     <table class="w-full" cellspacing="0">
       <thead>
         <tr class="h-12 uppercase">
