@@ -20,7 +20,7 @@
         v-for="item in order"
         :key="item.product.id"
       >
-        <img src="" alt="">
+        <img :src="`http://via.placeholder.com/50/${item.product.image}`" alt="Thumbnail">
         {{ item.product.title }} - {{ item.quantity }}
       </li>
     </ul>

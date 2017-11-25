@@ -63,4 +63,21 @@ describe('Cart.vue', function () {
     const listItems = vm.$el.querySelectorAll('li');
     expect(listItems.length).to.equal(2);
   });
+
+  it('displays the thumbnail correctly', async function () {
+    vm.sharedState.productsAdded = [
+      {
+        productId: 1,
+        quantity: 2,
+      },
+      {
+        productId: 2,
+        quantity: 1,
+      },
+    ];
+    await Vue.nextTick();
+
+    const firstItemImg = vm.$el.querySelector('ul img');
+    expect(firstItemImg.src).to.equal('http://via.placeholder.com/50/1abc9c');
+  });
 });
