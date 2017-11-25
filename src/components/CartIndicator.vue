@@ -5,7 +5,7 @@
     </div>
     <div class="relative h-full">
       <button class="w-24 h-full text-white -mr-6"
-        @click="$emit('cartOpened')"
+        @click="openCart"
       >
         <img class="w-12"
           src="./../assets/img/shopping-cart.svg"
@@ -51,6 +51,11 @@ export default {
           },
           0,
         );
+    },
+  },
+  methods: {
+    openCart() {
+      store.openCartAction();
     },
   },
 };

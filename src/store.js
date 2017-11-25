@@ -4,6 +4,7 @@ import { products } from '@/data/products.json';
 export default {
   debug: true,
   state: {
+    cartIsOpen: false,
     products,
     productsAdded: [],
   },
@@ -28,5 +29,19 @@ export default {
       productId,
       quantity,
     });
+  },
+
+  openCartAction() {
+    if (this.debug) {
+      console.log('openCartAction triggered');
+    }
+    this.state.cartIsOpen = true;
+  },
+
+  closeCartAction() {
+    if (this.debug) {
+      console.log('closeCartAction triggered');
+    }
+    this.state.cartIsOpen = false;
   },
 };

@@ -7,7 +7,7 @@
       Meu carrinho
     </h1>
     <button class="text-white absolute pin-r"
-      @click="$emit('cartClosed')"
+      @click="closeCart"
     >
       <img class="w-6"
         src="./../assets/img/close.svg"
@@ -91,6 +91,9 @@ export default {
     },
     getProductById(id) {
       return this.sharedState.products.find(item => item.id === id);
+    },
+    closeCart() {
+      store.closeCartAction();
     },
   },
 };
