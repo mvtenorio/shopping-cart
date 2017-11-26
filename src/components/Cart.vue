@@ -26,7 +26,8 @@
           <th></th>
           <th class="text-left">Produto</th>
           <th class="text-right">Quantidade</th>
-          <th class="text-right">Preço</th>
+          <th class="text-right">Preço unitário</th>
+          <th class="text-right">Preço total</th>
         </tr>
       </thead>
       <tbody>
@@ -54,13 +55,18 @@
           <td class="text-right">
             R$ {{ formatPrice(item.product.price) }}
           </td>
+          <td class="text-right">
+            R$ {{ formatPrice(item.product.price * item.quantity) }}
+          </td>
         </tr>
       </tbody>
       <tfoot>
         <tr class="h-24">
           <td></td>
-          <th colspan="2" class="text-right border-t uppercase">Subtotal</th>
-          <td class="text-right border-t">-</td>
+          <th colspan="3" class="text-right border-t uppercase">Subtotal</th>
+          <td class="text-right border-t">
+            R$ {{ formatPrice(subtotal) }}
+          </td>
         </tr>
       </tfoot>
     </table>
@@ -73,6 +79,7 @@
 
 <script>
 import store from '@/store';
+import { subtotal } from '@/utils/order';
 import priceMixin from '@/mixins/price';
 
 export default {
@@ -89,6 +96,9 @@ export default {
       return this.sharedState.productsAdded.map(item =>
         this.createOrderItem(item),
       );
+    },
+    subtotal() {
+      return subtotal(this.sharedState.productsAdded, this.sharedState.products);
     },
   },
   methods: {

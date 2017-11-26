@@ -24,6 +24,7 @@
 
 <script>
 import store from '@/store';
+import { quantity, subtotal } from '@/utils/order';
 import priceMixin from '@/mixins/price';
 
 export default {
@@ -36,22 +37,10 @@ export default {
   },
   computed: {
     quantity() {
-      return this.sharedState.productsAdded
-        .reduce((previous, current) => previous + current.quantity, 0);
+      return quantity(this.sharedState.productsAdded);
     },
-
     subtotal() {
-      return this.sharedState.productsAdded
-        .reduce(
-          (previous, current) => {
-            const price = this.sharedState.products
-              .find(item => item.id === current.productId)
-              .price;
-            const totalPrice = price * current.quantity;
-            return previous + totalPrice;
-          },
-          0,
-        );
+      return subtotal(this.sharedState.productsAdded, this.sharedState.products);
     },
   },
   methods: {
