@@ -1,12 +1,16 @@
 <template>
-<div class="absolute pin-r pin-y w-full md:w-3/5 bg-grey-darkest text-white p-8 flex flex-col"
+<div class="absolute pin-r pin-y w-full md:w-3/5 bg-grey-darkest text-grey-lighter p-8 flex flex-col shadow-lg"
   v-if="isOpen"
 >
   <div class="relative mb-8">
-    <h1 class="uppercase tracking-wide inline-block">
-      Meu carrinho
-    </h1>
-    <button class="text-white absolute pin-r"
+    <img class="w-6 mr-4"
+        src="./../assets/img/shopping-cart.svg"
+        alt="Carrinho"
+      >
+    <h2 class="uppercase font-normal tracking-wide inline-block">
+      Carrinho
+    </h2>
+    <button class="absolute pin-r"
       @click="closeCart"
     >
       <img class="w-6"
