@@ -23,29 +23,23 @@
 </template>
 
 <script>
-import store from '@/store';
-import { quantity, subtotal } from '@/utils/order';
 import priceMixin from '@/mixins/price';
 
 export default {
   name: 'cart-indicator',
   mixins: [priceMixin],
-  data() {
-    return {
-      sharedState: store.state,
-    };
-  },
   computed: {
     quantity() {
-      return quantity(this.sharedState.productsAdded);
+      return this.$store.getters.totalQuantity;
     },
+
     subtotal() {
-      return subtotal(this.sharedState.productsAdded, this.sharedState.products);
+      return this.$store.getters.subtotal;
     },
   },
   methods: {
     openCart() {
-      store.openCartAction();
+      this.$store.commit('openCart');
     },
   },
 };

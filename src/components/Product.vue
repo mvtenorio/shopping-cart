@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import store from '@/store';
 import priceMixin from '@/mixins/price';
 
 export default {
@@ -68,7 +67,10 @@ export default {
     addToCart() {
       const quantity = Number.parseInt(this.quantity, 10);
       if (quantity) {
-        store.addToCartAction(this.id, quantity);
+        this.$store.commit('addToCart', {
+          productId: this.id,
+          quantity,
+        });
       }
     },
   },

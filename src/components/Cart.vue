@@ -19,7 +19,7 @@
       >
     </button>
   </div>
-  <div class="flex-1" v-if="sharedState.productsAdded.length">
+  <div class="flex-1" v-if="productsAdded.length">
     <table class="w-full" cellspacing="0">
       <thead>
         <tr class="h-12 uppercase">
@@ -78,47 +78,35 @@
 </template>
 
 <script>
-import store from '@/store';
-import { subtotal } from '@/utils/order';
 import priceMixin from '@/mixins/price';
 
 export default {
   name: 'cart',
   mixins: [priceMixin],
-  props: ['isOpen'],
-  data() {
-    return {
-      sharedState: store.state,
-    };
-  },
   computed: {
-    order() {
-      return this.sharedState.productsAdded.map(item =>
-        this.createOrderItem(item),
-      );
+    isOpen() {
+      return this.$store.state.cartIsOpen;
     },
+
+    productsAdded() {
+      return this.$store.state.productsAdded;
+    },
+
+    order() {
+      return this.$store.getters.order;
+    },
+
     subtotal() {
-      return subtotal(this.sharedState.productsAdded, this.sharedState.products);
+      return this.$store.getters.subtotal;
     },
   },
   methods: {
-    createOrderItem(item) {
-      return {
-        quantity: item.quantity,
-        product: this.getProductById(item.productId),
-      };
-    },
-
-    getProductById(id) {
-      return this.sharedState.products.find(item => item.id === id);
-    },
-
     closeCart() {
-      store.closeCartAction();
+      this.$store.commit('closeCart');
     },
 
     removeItem(id) {
-      store.removeItemAction(id);
+      this.$store.commit('removeItem', id);
     },
   },
 };

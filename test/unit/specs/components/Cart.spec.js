@@ -2,79 +2,52 @@
 /* eslint-disable prefer-arrow-callback */
 import Vue from 'vue';
 import Cart from '@/components/Cart';
+import { store, mutations } from '@/store';
 import { products } from '@/data/products.json';
 
 describe('Cart.vue', function () {
   let vm;
   beforeEach(function () {
-    const Constructor = Vue.extend(Cart);
-    const initialData = {
-      sharedState: {
-        products,
-        productsAdded: [],
-      },
+    const initialState = {
+      cartIsOpen: true,
+      products,
+      productsAdded: [],
     };
-    vm = new Constructor({
-      data: initialData,
-      propsData: { isOpen: true },
-    }).$mount();
+    store.replaceState(initialState);
+
+    const Constructor = Vue.extend(Cart);
+    vm = new Constructor({ store }).$mount();
   });
 
   it('is open', function () {
-    expect(vm.isOpen).to.equal(true);
-  });
-
-  it('gets a product by id', function () {
-    const product = vm.getProductById(1);
-    expect(typeof product).to.equal('object');
-    expect(product.title).to.equal('Produto A');
-  });
-
-  it('computes an order', function () {
-    vm.sharedState.productsAdded = [{
-      productId: 2,
-      quantity: 3,
-    }];
-    expect(vm.order.length).to.equal(1);
-    const firstItem = vm.order[0];
-    expect(firstItem.quantity).to.equal(3);
-    expect(firstItem.product.price).to.equal(199.9);
+    expect(vm.$el.querySelector('h2').textContent.trim()).to.equal('Carrinho');
   });
 
   it('displays a message when is empty', function () {
-    expect(vm.sharedState.productsAdded.length).to.equal(0);
     expect(vm.$el.querySelector('p').textContent.trim()).to.equal(
       'Seu carrinho está vazio.',
     );
   });
 
   it('displays a list of the products in the cart', async function () {
-    vm.sharedState.productsAdded = [
-      {
-        productId: 1,
-        quantity: 2,
-      },
-      {
-        productId: 2,
-        quantity: 1,
-      },
-    ];
+    mutations.addToCart(store.state, {
+      productId: 1,
+      quantity: 2,
+    });
+    mutations.addToCart(store.state, {
+      productId: 2,
+      quantity: 2,
+    });
     await Vue.nextTick();
     const listItems = vm.$el.querySelectorAll('tbody tr');
     expect(listItems.length).to.equal(2);
   });
 
-  it('displays the thumbnail correctly', async function () {
-    vm.sharedState.productsAdded = [
-      {
-        productId: 1,
-        quantity: 2,
-      },
-      {
-        productId: 2,
-        quantity: 1,
-      },
-    ];
+  it('displays the thumbnail', async function () {
+    mutations.addToCart(store.state, {
+      productId: 1,
+      quantity: 2,
+    });
     await Vue.nextTick();
     const firstItemImg = vm.$el.querySelector('tbody img');
     expect(firstItemImg.src).to.equal('http://via.placeholder.com/50/1abc9c');
