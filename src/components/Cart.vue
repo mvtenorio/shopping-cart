@@ -41,7 +41,12 @@
               >
           </td>
           <td>
-            {{ item.product.title }}
+            <p class="mb-2">{{ item.product.title }}</p>
+            <button class="text-grey-lighter"
+              @click="removeItem(item.product.id)"
+            >
+              <small>(Remover item)</small>
+            </button>
           </td>
           <td class="text-right">
             {{ item.quantity }}
@@ -93,11 +98,17 @@ export default {
         product: this.getProductById(item.productId),
       };
     },
+
     getProductById(id) {
       return this.sharedState.products.find(item => item.id === id);
     },
+
     closeCart() {
       store.closeCartAction();
+    },
+
+    removeItem(id) {
+      store.removeItemAction(id);
     },
   },
 };

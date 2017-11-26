@@ -44,4 +44,15 @@ export default {
     }
     this.state.cartIsOpen = false;
   },
+
+  removeItemAction(productId) {
+    if (this.debug) {
+      console.log('removeItemAction triggered with', productId);
+    }
+    const indexToRemove = this.state.productsAdded.findIndex(
+      item => item.productId === productId,
+    );
+
+    this.state.productsAdded.splice(indexToRemove, 1);
+  },
 };
