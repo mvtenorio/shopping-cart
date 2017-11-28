@@ -1,8 +1,8 @@
 # Shopping Cart
 
-> Uma aplicação de carrinho de compras feita para fins de estudo.
+> A simple web app made with Vue, Vuex and Tailwind CSS
 
-Foi utilizado o [template PWA do Vue.js ](https://github.com/vuejs-templates/pwa)
+I used [Vue PWA template](https://github.com/vuejs-templates/pwa) as a starting point.
 
 ## Build Setup
 
@@ -19,13 +19,10 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 
-# run unit tests
+# run unit tests and watch for changes
 npm run unit
 
-# run e2e tests
-npm run e2e
-
-# run all tests
+# run all tests once
 npm test
 ```
 
