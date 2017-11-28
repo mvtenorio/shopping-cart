@@ -1,5 +1,5 @@
 <template>
-<div class="absolute pin-r pin-y w-full md:w-3/5 bg-grey-darkest text-grey-lighter p-8 flex flex-col shadow-lg"
+<div class="absolute pin-r pin-y w-full md:w-4/5 lg:w-3/5 bg-grey-darkest text-grey-lighter p-8 flex flex-col shadow-lg"
   v-if="isOpen"
 >
   <div class="relative mb-8">
@@ -20,13 +20,16 @@
     </button>
   </div>
   <div class="flex-1" v-if="productsAdded.length">
-    <table class="w-full" cellspacing="0">
+    <table class="w-full text-sm md:text-base" cellspacing="0">
       <thead>
         <tr class="h-12 uppercase">
-          <th></th>
+          <th class="hidden md:table-cell"></th>
           <th class="text-left">Produto</th>
-          <th class="text-right">Quantidade</th>
-          <th class="text-right">Preço unitário</th>
+          <th class="text-right">
+            <span class="lg:hidden" title="Quantidade">Qtd</span>
+            <span class="hidden lg:inline">Quantidade</span>
+          </th>
+          <th class="text-right hidden md:table-cell">Preço unitário</th>
           <th class="text-right">Preço total</th>
         </tr>
       </thead>
@@ -36,7 +39,7 @@
           :key="item.product.id"
           class="h-24"
         >
-          <td class="w-24">
+          <td class="w-24 hidden md:table-cell">
               <img :src="`http://via.placeholder.com/50/${item.product.image}`"
                 alt="Thumbnail"
               >
@@ -52,7 +55,7 @@
           <td class="text-right">
             {{ item.quantity }}
           </td>
-          <td class="text-right">
+          <td class="text-right hidden md:table-cell">
             R$ {{ formatPrice(item.product.price) }}
           </td>
           <td class="text-right">
@@ -62,8 +65,10 @@
       </tbody>
       <tfoot>
         <tr class="h-24">
-          <td></td>
-          <th colspan="3" class="text-right border-t uppercase">Subtotal</th>
+          <td class="hidden md:table-cell"></td>
+          <td class="border-t"></td>
+          <td class="border-t hidden md:table-cell"></td>
+          <th class="text-right border-t uppercase">Subtotal</th>
           <td class="text-right border-t">
             R$ {{ formatPrice(subtotal) }}
           </td>
