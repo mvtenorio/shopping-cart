@@ -39,6 +39,7 @@ export default {
   },
   methods: {
     openCart() {
+      window.scrollTo(0, 0);
       this.$store.commit('openCart');
     },
   },
