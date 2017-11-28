@@ -27,3 +27,9 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## TODO
+
+- [ ] Create input number compontent
+- [ ] Improve visual feedback when adding items to the cart
+- [ ] Allow to change the quantity of an item inside the cart
