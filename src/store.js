@@ -13,13 +13,6 @@ const state = {
   productsAdded: [],
 };
 
-function createOrderItem(item, _products) {
-  return {
-    quantity: item.quantity,
-    product: _products.find(p => p.id === item.productId),
-  };
-}
-
 export const mutations = {
   addToCart(state, { productId, quantity }) {
     const product = state.productsAdded.find(
@@ -35,7 +28,6 @@ export const mutations = {
       quantity,
     });
   },
-
 
   removeItem(state, productId) {
     const indexToRemove = state.productsAdded.findIndex(
@@ -55,8 +47,15 @@ export const mutations = {
 
 export const getters = {
   order(state) {
+    function createOrderItem(item) {
+      return {
+        quantity: item.quantity,
+        product: state.products.find(p => p.id === item.productId),
+      };
+    }
+
     return state.productsAdded.map(item =>
-      createOrderItem(item, state.products),
+      createOrderItem(item),
     );
   },
 
