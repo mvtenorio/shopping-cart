@@ -60,7 +60,7 @@ export default {
     },
 
     imgSrc() {
-      return `http://via.placeholder.com/220/${this.image}`;
+      return `https://via.placeholder.com/220/${this.image}`;
     },
   },
   methods: {

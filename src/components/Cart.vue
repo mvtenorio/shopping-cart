@@ -40,7 +40,7 @@
           class="h-24"
         >
           <td class="w-24 hidden md:table-cell">
-              <img :src="`http://via.placeholder.com/50/${item.product.image}`"
+              <img :src="`https://via.placeholder.com/50/${item.product.image}`"
                 alt="Thumbnail"
               >
           </td>

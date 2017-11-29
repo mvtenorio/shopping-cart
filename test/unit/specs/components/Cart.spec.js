@@ -50,6 +50,6 @@ describe('Cart.vue', function () {
     });
     await Vue.nextTick();
     const firstItemImg = vm.$el.querySelector('tbody img');
-    expect(firstItemImg.src).to.equal('http://via.placeholder.com/50/1abc9c');
+    expect(firstItemImg.src).to.equal('https://via.placeholder.com/50/1abc9c');
   });
 });
