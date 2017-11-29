@@ -8,9 +8,14 @@
     <product-list></product-list>
     <cart></cart>
   </main>
-  <footer class="w-full p-8 md:text-right leading-loose text-sm">
-    <div>Icon made by <a href="https://www.flaticon.com/authors/gregor-cresnar" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-    <div>Icon made by <a href="https://www.flaticon.com/authors/hadrien" title="Hadrien">Hadrien</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+  <footer class="w-full p-8 leading-loose">
+    <div class="md:text-center text-sm mb-8">
+      Made by Marcus Tenório • <a href="https://github.com/mvtenorio/shopping-cart">Github</a>
+    </div>
+    <div class="md:text-right text-xs">
+      <div>Icon made by <a href="https://www.flaticon.com/authors/gregor-cresnar" target="_blank" title="Gregor Cresnar">Gregor Cresnar</a> from <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+      <div>Icon made by <a href="https://www.flaticon.com/authors/hadrien" target="_blank" title="Hadrien">Hadrien</a> from <a href="https://www.flaticon.com/" target="_blank" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    </div>
   </footer>
 </div>
 </template>
