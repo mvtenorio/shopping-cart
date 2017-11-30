@@ -1,10 +1,10 @@
 {
-  "name": "y",
-  "short_name": "y",
+  "name": "Shopping Cart",
+  "short_name": "Cart",
   "icons": [
     {
-      "src": "/static/img/icons/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/static/img/icons/android-chrome-128x128.png",
+      "sizes": "128x128",
       "type": "image/png"
     },
     {
@@ -15,6 +15,6 @@
   ],
   "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#4DBA87"
+  "background_color": "#f3f7f9",
+  "theme_color": "#6574cd"
 }
