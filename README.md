@@ -55,3 +55,5 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 - [ ] Create input number compontent
 - [ ] Improve visual feedback when adding items to the cart
 - [ ] Add option to change the quantity of an item inside the cart
+- [ ] Make it work offline
+- [ ] Fix e2e tests
