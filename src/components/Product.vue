@@ -16,25 +16,26 @@
     </span>
   </p>
   <p>Quantidade:
-    <input-number
+    <m-input-number
       v-model="quantity"
       min="1"
       max="10"
     />
   </p>
   <div class="my-2">
-    <button
-      class="bg-indigo hover:bg-indigo-dark text-grey-lighter font-bold py-2 px-4 rounded"
+    <m-button
+      class="py-2 px-4"
       @click="addToCart"
     >
       Adicionar ao carrinho
-    </button>
+    </m-button>
   </div>
 </div>
 </template>
 
 <script>
-import InputNumber from '@/components/InputNumber';
+import MInputNumber from '@/components/MInputNumber';
+import MButton from '@/components/MButton';
 import priceMixin from '@/mixins/price';
 
 export default {
@@ -74,7 +75,8 @@ export default {
     },
   },
   components: {
-    InputNumber,
+    MInputNumber,
+    MButton,
   },
 };
 </script>

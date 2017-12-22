@@ -1,12 +1,12 @@
 /* eslint-disable func-names */
 /* eslint-disable prefer-arrow-callback */
 import Vue from 'vue';
-import InputNumber from '@/components/InputNumber';
+import MInputNumber from '@/components/MInputNumber';
 
-describe('InputNumber.vue', function () {
+describe('MInputNumber.vue', function () {
   let vm;
   beforeEach(function () {
-    const Constructor = Vue.extend(InputNumber);
+    const Constructor = Vue.extend(MInputNumber);
     vm = new Constructor();
     vm.value = 3;
     vm.min = 2;

@@ -36,5 +36,5 @@ export default {
 </script>
 
 <style lang="sass">
-@import './assets/css/styles.scss';
+@import './assets/scss/styles.scss';
 </style>

@@ -1,27 +1,29 @@
 <template>
 <div class="inline-flex h-8">
-  <button
-    class="bg-indigo text-white w-8 rounded-l"
+  <m-button
+    class="w-8 rounded-r-none"
     @click.prevent="decrement"
   >
     -
-  </button>
+  </m-button>
   <input type="text"
-    class="w-8 bg-grey-lighter text-center"
+    class="bg-grey-lighter w-8 text-center"
     :value="internalValue"
     readonly
   >
-  <button
-    class="bg-indigo text-white w-8 rounded-r"
+  <m-button
+    class="w-8 rounded-l-none"
     @click.prevent="increment"
   >
     +
-  </button>
+  </m-button>
 </div>
 </template>
 
 
 <script>
+import MButton from '@/components/MButton';
+
 export default {
   props: ['min', 'max', 'value'],
   data() {
@@ -51,6 +53,9 @@ export default {
     internalValue() {
       this.$emit('input', this.internalValue);
     },
+  },
+  components: {
+    MButton,
   },
 };
 </script>
