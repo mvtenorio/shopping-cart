@@ -16,13 +16,11 @@
     </span>
   </p>
   <p>Quantidade:
-    <input
-      type="number"
-      class="w-12"
+    <input-number
       v-model="quantity"
       min="1"
       max="10"
-    >
+    />
   </p>
   <div class="my-2">
     <button
@@ -36,6 +34,7 @@
 </template>
 
 <script>
+import InputNumber from '@/components/InputNumber';
 import priceMixin from '@/mixins/price';
 
 export default {
@@ -73,6 +72,9 @@ export default {
         });
       }
     },
+  },
+  components: {
+    InputNumber,
   },
 };
 </script>
