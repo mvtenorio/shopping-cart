@@ -18,8 +18,8 @@
   <p>Quantidade:
     <m-input-number
       v-model="quantity"
-      min="1"
-      max="10"
+      :min="1"
+      :max="10"
     />
   </p>
   <div class="my-2">

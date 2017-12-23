@@ -3,6 +3,7 @@
   <m-button
     class="w-8 rounded-r-none"
     @click.prevent="decrement"
+    :disabled="internalValue === min"
   >
     -
   </m-button>
@@ -14,6 +15,7 @@
   <m-button
     class="w-8 rounded-l-none"
     @click.prevent="increment"
+    :disabled="internalValue === max"
   >
     +
   </m-button>
@@ -25,7 +27,18 @@
 import MButton from '@/components/MButton';
 
 export default {
-  props: ['min', 'max', 'value'],
+  props: {
+    min: {
+      type: Number,
+    },
+    max: {
+      type: Number,
+    },
+    value: {
+      type: Number,
+      default: 0,
+    },
+  },
   data() {
     return {
       internalValue: 0,
@@ -45,9 +58,7 @@ export default {
     },
   },
   mounted() {
-    if (this.value) {
-      this.internalValue = this.value;
-    }
+    this.internalValue = this.value;
   },
   watch: {
     internalValue() {
