@@ -4,7 +4,7 @@
 
 ## Motivation
 
-I built this app so I could learn a few things and experiment with others. Below I explain why I chose this stack.
+I built this app so I could learn a few things. Below I explain why I chose this stack.
 
 ### Vue
 
@@ -23,7 +23,7 @@ I came across [Tailwind](https://tailwindcss.com) while building this app. I was
 
 ## Testing
 
-The template I used comes preconfigured with Karma, Mocha and Chai for unit testing. It works very well. The only change I needed to make was dropping PhantomJS for Chrome Headless because then I could use promises and async/await syntax in my tests without a pollyfill.
+The template I used comes preconfigured with Karma, Mocha and Chai for unit testing. It works very well. The only change I needed to make was dropping PhantomJS for Chrome Headless so I could use promises and async/await syntax in my tests without a pollyfill.
 
 
 ## Build Setup
